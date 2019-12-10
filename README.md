@@ -10,7 +10,7 @@
 
 接入：
 
-1. 在云开发控制台新建数据库集合 `groupchat`, 并把权限设置为所有用户可读
+1. 在云开发控制台新建数据库集合 `groupchat`, 并把权限设置为所有用户可读，添加索引 `createAt`
 2. 上传 `cloudfunctions/groupchat` 云函数
 
 ```js

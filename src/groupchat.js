@@ -168,6 +168,7 @@ class GroupChat extends EventEmitter {
     }
 
     this.disconnect();
+    this.removeAllListeners();
     this._destoryed = true;
     this.db = null;
     this.collection = null;
