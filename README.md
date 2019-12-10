@@ -8,6 +8,11 @@
 
 实时群聊 API，支持加载历史消息，发送消息
 
+接入：
+
+1. 在云开发控制台新建数据库集合 `groupchat`, 并把权限设置为所有用户可读
+2. 上传 `cloudfunctions/groupchat` 云函数
+
 ```js
 import {GroupChat} from 'path/to/mina-im';
 

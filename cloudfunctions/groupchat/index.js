@@ -4,7 +4,7 @@ cloud.init();
 
 const db = cloud.database();
 
-const COLLECTION = process.env.COLLECTION;
+const COLLECTION = process.env.COLLECTION || "groupchat";
 
 async function checkSec(message) {
   const content = JSON.stringify(message);
