@@ -1,0 +1,84 @@
+{
+  "name": "mina-im",
+  "version": "0.0.0",
+  "description": "基于小程序实时数据推送的小程序即时通信库 (小程序端)",
+  "homepage": "https://github.com/alexayan/mina-im",
+  "author": {
+    "name": "alexayan",
+    "email": "yanhaibiao1991@gmail.com",
+    "url": "https://github.com/alexayan"
+  },
+  "files": [
+    "lib",
+    "cloudfunctions",
+    "scripts"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "miniprogram",
+    "miniapp"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "globals": {
+      "wx": "readonly"
+    }
+  },
+  "scripts": {
+    "build": "npm run pretest && ./node_modules/.bin/babel src --out-dir lib",
+    "pretest": "eslint src/ cloudfunctions/",
+    "test": "jest"
+  },
+  "repository": "alexayan/mina-im",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@babel/runtime": "^7.7.2",
+    "backo2": "^1.0.2",
+    "eventemitter3": "^4.0.0"
+  },
+  "cloudfunctionRoot": "./cloudfunctions"
+}
